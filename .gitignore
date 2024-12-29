@@ -79,3 +79,4 @@ $RECYCLE.BIN/
 .xmake
 build
 .vscode
+tmp*

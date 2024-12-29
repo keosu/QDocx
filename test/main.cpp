@@ -8,15 +8,18 @@
 #include "table.h"
 
 int main(int argc, char *argv[]) {
-  char ver[10] = "0.3";
   QApplication a(argc, argv);
   QTextCodec::setCodecForLocale(
-      QTextCodec::codecForName("UTF8"));  // 用于QT 5.6 版本
-  //    QTextCodec::setCodecForLocale(QTextCodec::codecForName("GBK")); //
-  //    用于QT 5.12 版本
-  Docx::Document doc = Docx::Document("C:/Users/jianlong/Downloads/Doc1.docx");
-  doc.addHeading("title1--", 1);
-  doc.addParagraph("daimaceshi", "a3");
+      QTextCodec::codecForName("UTF8"));
+  auto doc = Docx::Document();
+  doc.addHeading("标题1", 1);
+  doc.addParagraph("content1 .... ", "a3");
+  doc.addHeading("标题2", 2);
+  doc.addParagraph("content1 .... ", "a3");
+  doc.addHeading("标题3", 3);
+  doc.addParagraph("content1 .... ", "a3");
+  doc.addHeading("标题4", 4);
+  doc.addParagraph("content1 .... ", "a3");
 
   /**
    * @brief table 协议总表格式
@@ -93,11 +96,11 @@ int main(int argc, char *argv[]) {
   }
 
   // 测试添加图像
-  doc.addPicture("C:/Users/jianlong/Pictures/centos-xc.png");
+  doc.addPicture("4.jpg");
   doc.addPageBreak();
-  auto pic = doc.addPicture("C:/Users/jianlong/Pictures/centos-xc.png");
+  auto pic = doc.addPicture("4.jpg");
 
-  doc.save("C:/Users/jianlong/test1.docx");
+  doc.save("Doc3.docx");
 
   return a.exec();
 }

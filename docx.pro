@@ -2,11 +2,11 @@
 QT += core xml gui-private
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-#TARGET = docxlib
-#TEMPLATE = lib
+TARGET = qdocx
+TEMPLATE = lib
 
-TARGET = DocxTest
-TEMPLATE = app
+#TARGET = DocxTest
+#TEMPLATE = app
 
 DEFINES += DOCX_LIBRARY
 
@@ -27,3 +27,6 @@ HEADERS +=\
     $$PWD/src/parts/*.h \
     $$PWD/src/image/*.h \
     $$PWD/src/enums/*.h
+
+RESOURCES += \
+    default.qrc
